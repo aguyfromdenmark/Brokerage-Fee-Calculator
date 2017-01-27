@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Brokerage Fee Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
@@ -48,27 +49,29 @@
           </div>
           <div class="row">
             <div class="col-sm-4">
-              <p>
-                Total trade price is: <span id="totalTradeResult"></span>
-              </p>
-              <p>
-                Price pr. unit: <span id="tradeUnitResult"></span>
-              </p>
+              <div id="resultBox">
+                <p>
+                  Total trade price is: <span id="totalTradeResult"></span>
+                </p>
+                <!--<p>
+                  Price pr. unit: <span id="tradeUnitResult"></span>
+                </p>-->
+              </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <div>
-                  <p>Pick trade</p>
+                  <label>Pick trade</label>
                 </div>
                 <input type="radio" name="tradeType" value="Buy" />Buy<br />
                 <input type="radio" name="tradeType" value="Sell" />Sell
               </div>
             </div>
             <div class="col-sm-4">
-                <button type="button" id="tradeCalculateButton">Calculate</button>
+                <button class="btn btn-info" type="button" id="tradeCalculateButton">Calculate</button>
             </div>
           </div>
-          <small>I am just a customer of Nordnet, I do not work for them or have any other relations with them. This is a project of my own interest. The accuracy of the calculation can not be guaranteed</small>
+          <small>I am just a customer of Nordnet, I do not work for them or have any other relations with them. This is a project of my own interest. The accuracy of the calculation can not be guaranteed. - 2017 Andreas Kristensen @aguyfromdenmark</small>
         </div>
       </div>
     </div>
