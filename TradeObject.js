@@ -1,7 +1,6 @@
-function Trade(accountType,price,amount,market,tradeType){
+function Trade(accountType,price,market,tradeType){
   this.AccountType = accountType;
   this.Price = price;
-  this.Amount = amount;
   this.Market = market;
   this.TradeType = tradeType;
 
