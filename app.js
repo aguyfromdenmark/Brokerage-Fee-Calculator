@@ -2,8 +2,15 @@ var lsAccountType = localStorage.getItem('lsAccountType');
 var lsMarket = localStorage.getItem('lsMarket');
 
 if (lsAccountType !== null && lsMarket !== null) {
-    $('input[name=accountType][value='+lsAccountType+']').prop('checked',true);
-    $('input[name=market][value='+lsMarket+']').prop('checked',true);    
+    var lsSelectedAccountType = $('input[name=accountType][value='+lsAccountType+']');
+    var lsSelectedMarket = $('input[name=market][value='+lsMarket+']');
+
+    $(lsSelectedAccountType).prop('checked',true);
+    $(lsSelectedMarket).prop('checked',true);   
+
+    $(lsSelectedAccountType).prev('.radio-selector.account').addClass('selected');
+    $(lsSelectedMarket).prev('.radio-selector.market').addClass('selected'); 
+     
 }
 
 if (typeof(Storage) !== 'undefined') {
@@ -42,4 +49,10 @@ $('#tradeCalculateButton').on('click', function () {
     $('#totalTradeResult').html(totalTradeResult + " " + trade.Market);
     $('#tradeUnitResult').html((tradeUnitResult) + " " + trade.Market);
     trade = null;
+});
+
+$('.radio-selector').on('click',function(){
+    $(this).siblings('.radio-selector').removeClass('selected');
+    $(this).addClass('selected');
+    $(this).next('input[type=radio]').prop('checked',true);
 });
