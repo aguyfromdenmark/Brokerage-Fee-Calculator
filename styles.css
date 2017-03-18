@@ -35,4 +35,5 @@ input[type=radio] {
 
 .radio-selector.selected {
   border:2px solid rgb(230,40,40);
+  cursor:pointer;
 }

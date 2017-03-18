@@ -55,3 +55,5 @@ $('label.radio-selector').on('click',function(){
     $(this).siblings('label.radio-selector').removeClass('selected');
     $(this).addClass('selected');
 });
+
+//TODO: Run calculations when enter button is hit
