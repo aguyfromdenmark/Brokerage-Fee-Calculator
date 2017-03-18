@@ -14,17 +14,21 @@ if (lsAccountType !== null && lsMarket !== null) {
 }
 
 if (typeof(Storage) !== 'undefined') {
-    var accountTypeRadio = $('input[name=accountType]');
-    var marketRadio = $('input[name=market]');
+    var accountTypeRadio = 'input[name=accountType]';
+    var marketRadio = 'input[name=market]';
 
-    accountTypeRadio.change(function(){
+    $(document.body).on('change',accountTypeRadio,function(){
+        console.log("accountype was changed");
         var selectedAccountType = $(this).val();  
         localStorage.setItem('lsAccountType', selectedAccountType);
+        console.log("accountype was saved");
     });
 
-    marketRadio.change(function(){
+    $(document.body).on('change',marketRadio,function(){
+        console.log("market was changed");
         var selectedMarket = $(this).val();
         localStorage.setItem('lsMarket',selectedMarket);
+        console.log("maret was saved");
     });
 }
 
