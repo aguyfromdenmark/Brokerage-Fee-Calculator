@@ -8,8 +8,8 @@ if (lsAccountType !== null && lsMarket !== null) {
     $(lsSelectedAccountType).prop('checked',true);
     $(lsSelectedMarket).prop('checked',true);   
 
-    $(lsSelectedAccountType).prev('.radio-selector.account').addClass('selected');
-    $(lsSelectedMarket).prev('.radio-selector.market').addClass('selected'); 
+    $(lsSelectedAccountType).prev('label.radio-selector').addClass('selected');
+    $(lsSelectedMarket).prev('label.radio-selector').addClass('selected'); 
      
 }
 
@@ -18,17 +18,13 @@ if (typeof(Storage) !== 'undefined') {
     var marketRadio = 'input[name=market]';
 
     $(document.body).on('change',accountTypeRadio,function(){
-        console.log("accountype was changed");
         var selectedAccountType = $(this).val();  
         localStorage.setItem('lsAccountType', selectedAccountType);
-        console.log("accountype was saved");
     });
 
     $(document.body).on('change',marketRadio,function(){
-        console.log("market was changed");
         var selectedMarket = $(this).val();
         localStorage.setItem('lsMarket',selectedMarket);
-        console.log("maret was saved");
     });
 }
 
@@ -55,8 +51,7 @@ $('#tradeCalculateButton').on('click', function () {
     trade = null;
 });
 
-$('.radio-selector').on('click',function(){
-    $(this).siblings('.radio-selector').removeClass('selected');
+$('label.radio-selector').on('click',function(){
+    $(this).siblings('label.radio-selector').removeClass('selected');
     $(this).addClass('selected');
-    $(this).next('input[type=radio]').prop('checked',true);
 });
