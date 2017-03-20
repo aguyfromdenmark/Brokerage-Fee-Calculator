@@ -56,4 +56,8 @@ $('label.radio-selector').on('click',function(){
     $(this).addClass('selected');
 });
 
-//TODO: Run calculations when enter button is hit
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+    $('#tradeCalculateButton').click();
+  }
+});
